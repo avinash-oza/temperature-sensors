@@ -11,4 +11,4 @@ from .status import api as ns1
 
 api = Api(app)
 api.add_namespace(ns1)
-# import garage_door.garage_door_server
+import temperature_sensors.temp_sensors
