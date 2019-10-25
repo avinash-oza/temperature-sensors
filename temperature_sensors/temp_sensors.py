@@ -1,19 +1,11 @@
 import datetime
 
-# import RPi.GPIO as GPIO
-# from sensors_lib.get_temperature import get_ds18b20_sensor
+from pi_funcs.funcs import get_ds18b20_sensor
 from flask_restplus import Resource, fields
 
-from . import api
-
-# Get the senors and zip them to make a dict
-# sensor_names = config.get('general','sensor_names').split(',')
-# sensor_ids = config.get('general','sensor_ids').split(',')
-# TEMPERATURE_SENSOR_MAPPING = dict(zip(sensor_names, sensor_ids))
+from . import api, TEMPERATURE_SENSOR_MAPPING
 
 # TODO: TEST CODE
-# TEMPERATURE_SENSOR_MAPPING = {'A': '1234',
-#                               'B': '4567'}
 # def get_ds18b20_sensor(sensor_name):
 #     return 1000
 # TODO: END TEST CODE
@@ -54,7 +46,7 @@ class TemperaturesResource(Resource):
             try:
                 sensor_temp = get_ds18b20_sensor(sensor_id)
             except:
-                sensor_temp = "ERROR OCCURED FOR {}".format(one_sensor)
+                sensor_temp = "ERROR OCCURRED FOR {}".format(one_sensor)
                 one_response['error'] = 2  # Critical status
 
             one_response['raw_value'] = sensor_temp

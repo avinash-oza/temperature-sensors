@@ -1,11 +1,13 @@
+import os
 from flask import Flask
 from flask_restplus import Api
 
 app = Flask(__name__)
 
-app.config.from_mapping({'GENERAL_HOSTNAME': 'DEFAULT_HOST'})
-if not app.config.from_envvar('APP_SETTINGS', silent=True):
-    print("Did not find a config to load")
+# Get the senors and zip them to make a dict
+sensor_names = os.environ.get('SENSOR_NAMES').split(',')
+sensor_ids = os.environ.get('SENSOR_IDS').split(',')
+TEMPERATURE_SENSOR_MAPPING = dict(zip(sensor_names, sensor_ids))
 
 from .status import api as ns1
 
