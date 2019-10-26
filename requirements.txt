@@ -11,7 +11,7 @@ Jinja2==2.10.3
 jsonschema==3.1.1
 MarkupSafe==1.1.1
 more-itertools==7.2.0
-git+https://github.com/avinash-oza/pi-funcs.git@v0.1#egg=pi-funcs
+git+https://github.com/avinash-oza/pi-funcs.git@v0.2#egg=pi-funcs
 pathlib2==2.3.5
 pyrsistent==0.15.4
 pytz==2019.3
