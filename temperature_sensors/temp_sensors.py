@@ -14,13 +14,13 @@ from . import api, TEMPERATURE_SENSOR_MAPPING
 TempModel = api.model('TempModel',
                       {'sensor_name': fields.String(),
                        'raw_value': fields.String(),
-                       'service_description': fields.String(),
-                       'plugin_output': fields.String(),
-                       'return_code': fields.String(),
-                       'status_time': fields.String(),
+                       # 'service_description': fields.String(),
+                       # 'plugin_output': fields.String(),
+                       # 'return_code': fields.String(),
+                       # 'status_time': fields.String(),
                        'status_time_utc': fields.String(),
-                       'hostname': fields.String(default='NO_HOSTNAME'),
-                       'message': fields.String(allow_null=True)
+                       # 'hostname': fields.String(default='NO_HOSTNAME'),
+                       # 'message': fields.String(allow_null=True)
                        })
 
 TempResponseModel = api.model('TempResponseModel',
